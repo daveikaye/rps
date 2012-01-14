@@ -22,12 +22,13 @@ var OpponentsView = Backbone.View.extend({
 	
 	refreshOpponents: function() {
 		var user = this.model;
-		$.get('/opponents.html', function(data) {template=data; user.fetch();});
+		user.fetch();
 		_(this.refreshOpponents).delay(5000);
 	},
 	   
 	render: function(){
-	    var html = Mustache.to_html(template, this.model.toJSON()[0]);
+		template = $('#opponentsList').html();
+	    var html = Mustache.render(template, this.model.toJSON()[0]);
 	    $('#opponents_div').html(html);
 	},
 	

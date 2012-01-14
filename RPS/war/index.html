@@ -25,7 +25,7 @@
 		User Name: <input type="text" id="user_name" />
 	</div>
 	
-	<script src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>
+	<script src="js/lib/mustache.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="js/lib/jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script src="js/lib/json2.js"></script>
@@ -34,6 +34,10 @@
 	<script src="js/controller.js"></script>
 	<script src="js/opponentsView.js"></script>
 	<script src="js/signinView.js"></script>
-	<script src="js/userModel.js"></script>	
+	<script src="js/userModel.js"></script>
+	<script id="opponentsList" type="text/html">
+      <h2>Available opponents</h2>
+	  <select id="opponents" size="4">{{#opponents}}<option value="{{user_id}}">{{user_name}}</option>{{/opponents}}</select>
+    </script>
   </body>
 </html>
